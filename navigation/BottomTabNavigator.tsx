@@ -43,7 +43,7 @@ export default function BottomTabNavigator() {
         name="post"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="television-play" size={28} color="black" />,
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="television-play" size={28} color={color} />,
           tabBarLabel: () => null,
         }}
       />
@@ -51,7 +51,7 @@ export default function BottomTabNavigator() {
         name="heart"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <FontAwesome name="shopping-bag" size={28} color="black" />,
+          tabBarIcon: ({ color }) => <FontAwesome name="shopping-bag" size={28} color={color} />,
           tabBarLabel: () => null,
         }}
       />
@@ -59,7 +59,7 @@ export default function BottomTabNavigator() {
         name="profile"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <Ionicons name="ios-person-circle-outline" size={28} color="black" />,
+          tabBarIcon: ({ color }) => <Ionicons name="ios-person-circle-outline" size={28} color={color} />,
           tabBarLabel: () => null,
           tabBarBadge: 3,
         }}
