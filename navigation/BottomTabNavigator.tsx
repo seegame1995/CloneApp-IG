@@ -3,7 +3,7 @@
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */
 
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, Entypo, MaterialCommunityIcons, Feather, FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
@@ -21,20 +21,47 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="home"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="TabOne"
+        name="home"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <Entypo name="home" size={28} color={color} />,
+          tabBarLabel: () => null,
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="search"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <Feather name="search" size={28} color={color} />,
+          tabBarLabel: () => null,
+        }}
+      />
+      <BottomTab.Screen
+        name="post"
+        component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="television-play" size={28} color="black" />,
+          tabBarLabel: () => null,
+        }}
+      />
+      <BottomTab.Screen
+        name="heart"
+        component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <FontAwesome name="shopping-bag" size={28} color="black" />,
+          tabBarLabel: () => null,
+        }}
+      />
+      <BottomTab.Screen
+        name="profile"
+        component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <Ionicons name="ios-person-circle-outline" size={28} color="black" />,
+          tabBarLabel: () => null,
+          tabBarBadge: 3,
         }}
       />
     </BottomTab.Navigator>
