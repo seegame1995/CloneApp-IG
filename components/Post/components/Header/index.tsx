@@ -16,7 +16,7 @@ const Header = (DataimageUri: any) =>{
             </View>
 
             <View style={styles.right}>
-                <Icon name="dots-three-vertical" size={20}/>
+                <Icon name="dots-three-horizontal" size={15}/>
             </View>
             
         </View>

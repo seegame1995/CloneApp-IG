@@ -13,6 +13,8 @@ import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
+import FAIcon from 'react-native-vector-icons/FontAwesome';
+import ADIcon from 'react-native-vector-icons/AntDesign';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -84,12 +86,19 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']
 function LogoTitle() {
   return (
     <View style={styles.header}>
-      <IoniconsIcon style={ styles.camera } name="camera" size={25} color={"#545454"}/>
-      <Image
-        style={styles.Image}
-        source={require('../assets/images/logo.png')}
-      />
-      <IoniconsIcon style={ styles.paper } name="paper-plane-outline" size={25} color={"#545454"}/>
+      <View>
+        <Image
+          style={styles.Image}
+          source={require('../assets/images/logo.png')}
+        />
+      </View>
+      <View style={styles.right}>
+        <FAIcon  name="plus-square-o" size={25} color={"#545454"}/>
+        <ADIcon  name="hearto" size={25} color={"#545454"}/>
+        <IoniconsIcon  name="paper-plane-outline" size={25} color={"#545454"}/>
+      </View>
+      
+      
     </View>
     
   );
@@ -129,16 +138,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%',
     alignItems: 'center',
+    marginLeft: Platform.OS === 'ios' ? 45 : 0,
+  },
+  right:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: 120,
+    marginRight: Platform.OS === 'ios' ? 90 : 0,
   },
   Image:{
     width: 130,
     height: 40,
     resizeMode: 'stretch',
   },
-  camera:{
-    marginLeft: Platform.OS === 'ios' ? 30 : 0,
-  },
-  paper:{
-    marginRight: Platform.OS === 'ios' ? 30 : 0,
-  }
 });
