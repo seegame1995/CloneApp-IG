@@ -41,9 +41,9 @@ const Stories = () =>{
                 keyExtractor={({name})=>name}
                 horizontal
                 showsHorizontalScrollIndicator={false}
-                style={styles.container}
                 renderItem={({item})=> <Story imageUri={item.imageUri} name={item.name}/>}
             />
+            <View style={styles.container}></View>
         </View>
         
     )
