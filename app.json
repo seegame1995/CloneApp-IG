@@ -19,17 +19,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.mrcsoftware.CloneApp-IG",
-      "buildNumber": "1.0.0"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.mrcsoftware.CloneApp-IG",
-      "versionCode": 1
+      }
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
