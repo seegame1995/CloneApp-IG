@@ -21,7 +21,7 @@ const data = [
     },
     {
         user:{
-          imageUri: 'https://www.matichon.co.th/wp-content/uploads/2018/12/%E0%B8%98%E0%B8%99%E0%B8%B2%E0%B8%98%E0%B8%A301.jpg',
+          imageUri: 'https://media.thaigov.go.th/uploads/thumbnail/news/2020/04/IMG_28918_20200413104457000000.jpg',
           name: 'Thu Prayut',
           id: 4,
         },
