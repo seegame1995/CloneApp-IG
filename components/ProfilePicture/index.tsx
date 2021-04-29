@@ -1,16 +1,15 @@
 import React from 'react';
-import { Image } from 'react-native';
-import { View } from '../Themed';
+import { Image, View } from 'react-native';
 import styles from './styles';
 
 const ProfilePicture = (dataUri:any) =>{
-
-    // console.log(dataUri.uri);
+    // console.log(size);
+    // console.log(dataUri);
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, {width: dataUri.size+6, height: dataUri.size+6}]}>
             <Image 
                 source={{ uri: dataUri.uri }}
-                style={styles.Image} 
+                style={[styles.Image, {width: dataUri.size, height: dataUri.size}]} 
             />
         </View>
     )

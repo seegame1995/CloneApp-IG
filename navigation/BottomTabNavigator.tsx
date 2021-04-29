@@ -8,10 +8,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 
-import Colors from '../constants/Colors';
+import { Image, View, StyleSheet, Platform } from 'react-native';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
+import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -80,6 +81,20 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
+function LogoTitle() {
+  return (
+    <View style={styles.header}>
+      <IoniconsIcon style={ styles.camera } name="camera" size={25} color={"#545454"}/>
+      <Image
+        style={styles.Image}
+        source={require('../assets/images/logo.png')}
+      />
+      <IoniconsIcon style={ styles.paper } name="paper-plane-outline" size={25} color={"#545454"}/>
+    </View>
+    
+  );
+}
+
 const TabOneStack = createStackNavigator<TabOneParamList>();
 
 function TabOneNavigator() {
@@ -88,7 +103,7 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="TabOneScreen"
         component={TabOneScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+        options={{ headerTitle: props => <LogoTitle/> }}
       />
     </TabOneStack.Navigator>
   );
@@ -107,3 +122,23 @@ function TabTwoNavigator() {
     </TabTwoStack.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  header:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    alignItems: 'center',
+  },
+  Image:{
+    width: 130,
+    height: 40,
+    resizeMode: 'stretch',
+  },
+  camera:{
+    marginLeft: Platform.OS === 'ios' ? 30 : 0,
+  },
+  paper:{
+    marginRight: Platform.OS === 'ios' ? 30 : 0,
+  }
+});

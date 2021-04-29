@@ -1,19 +1,20 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import { View } from '../components/Themed';
 import Stories from '../components/Stories';
+import Feed from '../components/Post/components/Feed';
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Stories/>
+      <Feed/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container:{
     flex: 1,
+    backgroundColor: '#fff',
   }
 });
